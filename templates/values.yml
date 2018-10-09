@@ -1,0 +1,6 @@
+persistence:
+  enabled: true
+  storageClass: '{{ storage_class_name }}'
+service:
+  type: NodePort
+  nodePort: {{ k8s_docker_registry_nodeport }}
