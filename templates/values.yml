@@ -2,5 +2,7 @@ persistence:
   enabled: true
   storageClass: '{{ storage_class_name }}'
 service:
-  type: NodePort
+  type: {{ k8s_docker_registry_service_type }}
+{% if k8s_docker_registry_service_type == "NodePort" %}
   nodePort: {{ k8s_docker_registry_nodeport }}
+{% endif %}
